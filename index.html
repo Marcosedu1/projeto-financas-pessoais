@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="icone.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>IT Lab - Controle de Finanças</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="container text-center" id="cabecalho-titulo">
+        <img src="img/logoorigem.png" alt="Logo da IT Lab" />
+        <h1>CONTROLE <span>DE FINANÇAS</span></h1>
+      </div>
+    </header>
+
+    <section class="formulario container rounded-3" id="registrar-titulo">
+      <form
+        class="needs-validation"
+        id="form-registro"
+        onsubmit="return validate()"
+        method="post"
+      >
+        <h2 id="title-form" class="text-center m-3">Registrar Lançamento</h2>
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <div class="mb-3 form-tipo-mov">
+              <label for="select-type" class="form-label"
+                >Tipo de Movimentação*</label
+              >
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                id="select-type"
+              >
+                <option selected disabled value="0">
+                  Selecione a Movimentação
+                </option>
+                <option value="1">Receita</option>
+                <option value="2">Debito</option>
+              </select>
+              <div class="feedback" id="feedback-tipo"></div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6">
+            <div class="mb-3 form-origem">
+              <label for="select-origem" class="form-label">Origem*</label>
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                id="select-origem"
+              >
+                <option selected disabled value="0">Selecione a Origem</option>
+                <option value="1">Pagamento</option>
+                <option value="2">Boleto</option>
+                <option value="3">Conta de água</option>
+                <option value="4">Conta de luz</option>
+                <option value="5">IPVA</option>
+                <option value="6">IPTU</option>
+              </select>
+              <div class="feedback" id="feedback-origem"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 form-desc">
+          <label for="txt-desc" class="form-label">Descrição*</label>
+          <textarea
+            class="form-control"
+            id="txt-desc"
+            rows="3"
+            maxlength="100"
+            placeholder="Descrição da Movimentação"
+          ></textarea>
+          <div class="feedback" id="feedback-descricao"></div>
+        </div>
+
+        <div class="mb-3 valor">
+          <label for="input-valor" class="form-label">Valor*</label>
+          <div class="input-group">
+            <span class="input-group-text">R$</span>
+            <input
+              type="number"
+              class="form-control"
+              aria-label="BRL"
+              id="input-valor"
+              placeholder="R$ 0,00"
+            />
+          </div>
+          <div class="feedback" id="feedback-valor"></div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="mb-3 form-data-venc">
+              <label for="data-venc">Data de Vencimento*</label>
+              <input type="date" id="data-venc" class="form-control" />
+              <div class="feedback" id="feedback-data-venc"></div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="mb-3 form-data-liq">
+              <label for="data-liq">Data de Liquidação*</label>
+              <input type="date" id="data-liq" class="form-control" />
+              <div class="feedback" id="feedback-data-liq"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 text-center">
+          <button
+            class="btn btn-primary btn-lg"
+            type="submit"
+            id="botao-registrar"
+          >
+            Salvar
+          </button>
+          <br>
+          <button class="btn btn-danger btn-lg" type="reset" id="button-reset">
+            Resetar Formulário
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2022 IT Lab Software</p>
+    </footer>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script lang="javascript" src="js/script.js"></script>
+  </body>
+</html>
