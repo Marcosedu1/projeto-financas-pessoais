@@ -11,14 +11,14 @@ function validateType(){
     }
 }
 
-function validateOrigin(){
-    var origem = document.querySelector('select#select-origem').value //Variavel de entrada
-    var feedbackOrigem = document.querySelector('div#feedback-origem') //Variavel de feedback
-    feedbackOrigem.innerHTML = '' //Limpar feedback
+function validateCategory(){
+    var Categoria = document.querySelector('select#select-Categoria').value //Variavel de entrada
+    var feedbackCategoria = document.querySelector('div#feedback-Categoria') //Variavel de feedback
+    feedbackCategoria.innerHTML = '' //Limpar feedback
 
-    if(origem === '0'){ //Verificar se foi selecionado
-        feedbackOrigem.innerHTML += 'Selecione a origem' //Feedback visual
-        document.getElementById('select-origem').focus() //Foca no campo de origem
+    if(Categoria === '0'){ //Verificar se foi selecionado
+        feedbackCategoria.innerHTML += 'Selecione a Categoria' //Feedback visual
+        document.getElementById('select-Categoria').focus() //Foca no campo de Categoria
         var hasError = true;
         return hasError;
     }
@@ -123,9 +123,9 @@ function validate(){
 
     hasError = validateType()
     
-    //Validar Origem
+    //Validar Categoria
 
-    hasError = validateOrigin()
+    hasError = validateCategory()
 
     //Validar Descrição
 
